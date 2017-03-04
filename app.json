@@ -6,7 +6,7 @@
     "sendwithus"
   ],
   "image": "heroku/go:1.8",
-  "mount_dir": "./battlesnake-go",
+  "mount_dir": "src/github.com/james-woo/battlesnake-go",
   "website": "https://github.com/james-woo/battlesnake-go",
   "repository": "https://github.com/james-woo/battlesnake-go"
 }
