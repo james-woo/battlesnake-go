@@ -6,8 +6,5 @@
     "sendwithus"
   ],
   "website": "http://battlesnake.io",
-  "repository": "https://github.com/sendwithus/battlesnake-go",
-  "env": {
-    "BUILDPACK_URL": "https://github.com/kr/heroku-buildpack-go"
-  }
+  "repository": "https://github.com/sendwithus/battlesnake-go"
 }
