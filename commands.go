@@ -38,13 +38,13 @@ func handleStart(res http.ResponseWriter, req *http.Request) {
 
 func handleMove(res http.ResponseWriter, req *http.Request) {
 	data, err := NewMoveRequest(req)
-	if err != nil {
-		respond(res, MoveResponse{
-			Move:  "up",
-			Taunt: toStringPointer("can't parse this!"),
-		})
-		return
-	}
+	// if err != nil {
+	// 	respond(res, MoveResponse{
+	// 		Move:  "up",
+	// 		Taunt: toStringPointer("can't parse this!"),
+	// 	})
+	// 	return
+	// }
 
 	directions := []string{
 		"up",
@@ -54,9 +54,11 @@ func handleMove(res http.ResponseWriter, req *http.Request) {
 	}
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-
-	respond(res, MoveResponse{
-		Move:  directions[r.Intn(4)],
-		Taunt: &data.You,
-	})
+	if err != nil {
+		respond(res, MoveResponse{
+			Move:  directions[r.Intn(4)],
+			Taunt: &data.You,
+		})
+		return
+	}
 }
